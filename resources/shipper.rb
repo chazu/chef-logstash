@@ -7,8 +7,8 @@ attribute :install_dir, :kind_of => String, :default => '/opt/logstash'
 attribute :logstash_version, :kind_of => String, :default => '1.1.13'
 attribute :uid, :kind_of => String, :default => "root"
 attribute :gid, :kind_of => String, :default => "root"
-
-attribute :file_groups, :kind_of => Array,
+attribute :server_host, :kind_of => String, :default => "127.0.0.1"
+attribute :logs, :kind_of => Array,
 :default => [
              {
                "paths" => ["/var/log/**/*"],
