@@ -35,10 +35,12 @@ action :create do
         mode 0555
         owner new_resource.uid
         group new_resource.gid
+        cookbook 'logstash'
       end
 
       template "/etc/init/logstash_indexer.conf" do
         source "upstart.conf.erb"
+        cookbook 'logstash'
         owner new_resource.uid
         group new_resource.gid
         variables :description => "logstash_indexer",
