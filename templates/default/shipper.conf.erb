@@ -1,12 +1,17 @@
 input {
 <% @logs.each do |file_type| %>
   file {
-    sincedb_path => "<%= @sincedb_path %>"
+    sincedb_path => "<%= @install_dir %>"
     type => <%= file_type["type"] %>
     path => <%= file_type["paths"] %>
   }
 <% end %>
+}
 
 output {
-  redis { host => "<%= @server_host -%>" data_type => "list" key => "logstash" }
+  redis {
+    host => "<%= @server_host -%>"
+    data_type => "list"
+    key => "logstash"
+  }
 }
