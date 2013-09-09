@@ -1,6 +1,7 @@
 input {
+<% @nodes.each do |node_address| %>
   redis {
-    host => "127.0.0.1"
+    host => "<%= node_address -%>"
     type => "redis-input"
     # these settings should match the output of the agent
     data_type => "list"
@@ -10,6 +11,7 @@ input {
     format => "json_event"
   }
 }
+<% end %>
 
 output {
   stdout { debug => true debug_format => "json"}

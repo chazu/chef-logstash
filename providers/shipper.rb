@@ -6,7 +6,6 @@ end
 
 action :create do
   package 'default-jre'
-  package 'redis-server'
 
   conf_hash = {
     "logs" => new_resource.logs,

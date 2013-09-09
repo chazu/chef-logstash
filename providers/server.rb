@@ -36,6 +36,7 @@ action :create do
         owner new_resource.uid
         group new_resource.gid
         cookbook 'logstash'
+        variables :nodes => new_resource.nodes
       end
 
       template "/etc/init/logstash_indexer.conf" do

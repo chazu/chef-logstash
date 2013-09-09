@@ -2,15 +2,15 @@ input {
 <% @logs.each do |file_type| %>
   file {
     sincedb_path => "<%= @install_dir %>"
-    type => <%= file_type["type"] %>
-    path => <%= file_type["paths"] %>
+    type => <%= file_type[:type].to_s %>
+    path => <%= file_type[:paths].to_s %>
   }
 <% end %>
 }
 
 output {
   redis {
-    host => "<%= @server_host -%>"
+    host => "127.0.0.1"
     data_type => "list"
     key => "logstash"
   }
