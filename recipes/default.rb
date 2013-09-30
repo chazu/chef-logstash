@@ -9,5 +9,5 @@
 
 include_recipe "apt::default"
 
-logstash_server "booya"
-logstash_shipper "kasha"
+
+

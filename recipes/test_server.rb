@@ -1,0 +1,1 @@
+logstash_server "booya"
