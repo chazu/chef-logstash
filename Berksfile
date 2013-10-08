@@ -1,6 +1,5 @@
 site :opscode
 
 cookbook "apt"
-cookbook "elasticsearch"
-cookbook "kibana", :github => "lusis/chef-kibana"
+cookbook "elasticsearch", :path => './../chef-elasticsearch'
 metadata

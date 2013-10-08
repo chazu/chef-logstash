@@ -2,8 +2,6 @@ def whyrun_supported?
   true
 end
 
-
-
 action :create do
   package 'default-jre'
 

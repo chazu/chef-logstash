@@ -11,7 +11,7 @@ attribute :server_host, :kind_of => String, :default => "127.0.0.1"
 attribute :logs, :kind_of => Array,
 :default => [
              {
-               "paths" => ["/var/log/**/*"],
+               "paths" => ["/var/log/syslog","/var/log/**/*.log"],
                "type" => "default"
              }
             ]

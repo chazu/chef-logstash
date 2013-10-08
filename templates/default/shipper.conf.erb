@@ -2,8 +2,8 @@ input {
 <% @logs.each do |file_type| %>
   file {
     sincedb_path => "<%= @install_dir %>"
-    type => <%= file_type[:type].to_s %>
-    path => <%= file_type[:paths].to_s %>
+    type => <%= file_type['type'].to_s %>
+    path => <%= file_type['paths'].to_s %>
   }
 <% end %>
 }
