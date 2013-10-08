@@ -4,6 +4,17 @@ end
 
 action :create do
   package 'default-jre'
+  package 'redis-server'
+
+  template "/etc/redis/redis.conf" do
+    source 'redis.conf.erb'
+    cookbook 'logstash'
+    variables :bind => node['redis']['bind']
+  end
+
+  service "redis-server" do
+    action :restart
+  end
 
   conf_hash = {
     "logs" => new_resource.logs,
